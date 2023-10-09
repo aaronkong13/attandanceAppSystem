@@ -1,3 +1,4 @@
+import 'package:testflutterproject1/attandanceSrceen.dart';
 import 'package:testflutterproject1/employeeListScreen.dart';
 
 import 'main.dart';
@@ -63,8 +64,16 @@ class _empRecordScreenState extends State<empRecordScreen> {
                             //navigate user to check employee list
                           },
                         ),
-                        Text("2.Take attandance",
-                            style: TextStyle(fontSize: 30))
+                        GestureDetector(
+                          child: Text("2.Take attandance",
+                              style: TextStyle(fontSize: 30)),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                              return takeAttendanceSrceen();
+                            }));
+                          },
+                        )
                       ]),
                 )
               ],
@@ -78,6 +87,15 @@ class _empRecordScreenState extends State<empRecordScreen> {
                     Text("Go Back"),
                   ]))
             ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "press the menu to select the action",
+                  style: TextStyle(fontSize: 20),
+                )
+              ],
+            ),
           ],
         )));
   }

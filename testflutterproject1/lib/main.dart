@@ -44,7 +44,7 @@ class HomeDesign extends StatelessWidget {
 
                 Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext context) {
-                  return empRecordScreen(empName);
+                  return empRecordScreen(empName: empName);
                 }));
               },
               child: Text("search"))

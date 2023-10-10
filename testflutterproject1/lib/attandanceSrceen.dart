@@ -1,8 +1,8 @@
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:testflutterproject1/attdRecord.dart';
-import 'package:date_format/date_format.dart';
+//import 'package:date_format/date_format.dart';
 
 class takeAttendanceSrceen extends StatefulWidget {
   const takeAttendanceSrceen({super.key});
@@ -28,7 +28,7 @@ class _takeAttandanceSrceenState extends State<takeAttendanceSrceen> {
           child: Column(
             children: [
               Text(
-                "Press the button to take the attendance",
+                "Press the button to take the attendance\n",
                 style: TextStyle(fontSize: 20),
               ),
               FloatingActionButton(
@@ -41,7 +41,7 @@ class _takeAttandanceSrceenState extends State<takeAttendanceSrceen> {
 
                   if (takeCount > previousCount) {
                     setState(() {
-                      output = "Successful to take attendance.\n";
+                      output = "               Successful!                  \n";
                       time = attdRec.getTime();
                       date = attdRec.getDate();
                     });
@@ -50,9 +50,39 @@ class _takeAttandanceSrceenState extends State<takeAttendanceSrceen> {
                 child: Icon(Icons.check), // Use an icon for the button
               ),
               SizedBox(height: 10.0, width: 10.0), // Add some spacing
-              Text(output, style: TextStyle(fontSize: 30.0)),
-              Text(date, style: TextStyle(fontSize: 30.0)),
-              Text(time, style: TextStyle(fontSize: 30.0))
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black, // Border color
+                    width: 1.0, // Border width
+                  ),
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(10.0)), // Border radius
+                ),
+                child: Text(
+                  output,
+                  style: TextStyle(fontSize: 30.0),
+                ),
+              ),
+              Container(
+                child: Text("ATTEND TIME:\n", style: TextStyle(fontSize: 40)),
+              ),
+              Column(
+                children: [
+                  Container(
+                    child: Text(
+                      date,
+                      style: TextStyle(fontSize: 30.0),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Text(
+                  time,
+                  style: TextStyle(fontSize: 30.0),
+                ),
+              ),
             ],
           ),
         ));

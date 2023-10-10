@@ -6,13 +6,21 @@ import 'package:flutter/material.dart';
 import 'emp.dart';
 
 class empRecordScreen extends StatefulWidget {
-  empRecordScreen(String name);
+  final String empName;
+  empRecordScreen({required this.empName});
   @override
   State<empRecordScreen> createState() => _empRecordScreenState();
 }
 
 class _empRecordScreenState extends State<empRecordScreen> {
-  String displayName = "";
+  String displayName = ""; // Initialize displayName
+
+  @override
+  void initState() {
+    super.initState();
+    displayName = widget.empName; // Assign the empName passed as a parameter
+  }
+
   Employee emp = Employee();
   HomeDesign inputEmp = HomeDesign();
   @override
@@ -31,8 +39,8 @@ class _empRecordScreenState extends State<empRecordScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Welcome!${displayName}",
-                    style: TextStyle(fontSize: 40),
+                    "Welcome!\n${displayName}",
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -91,8 +99,8 @@ class _empRecordScreenState extends State<empRecordScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "press the menu to select the action",
-                  style: TextStyle(fontSize: 20),
+                  "(press the menu to select the action)",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 )
               ],
             ),

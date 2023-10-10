@@ -32,8 +32,8 @@ class AttendanceRecord {
   }
 
   getTime() {
-    String time;
-    return time = DateFormat("hh:mm:ss a").format(new DateTime.now());
+    String time = DateFormat("hh:mm:ss a").format(new DateTime.now());
+    return time;
   }
 
   getDate() {

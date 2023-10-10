@@ -1,4 +1,5 @@
 import 'package:testflutterproject1/attandanceSrceen.dart';
+import 'package:testflutterproject1/checkAttendSrc.dart';
 import 'package:testflutterproject1/employeeListScreen.dart';
 
 import 'main.dart';
@@ -73,12 +74,22 @@ class _empRecordScreenState extends State<empRecordScreen> {
                           },
                         ),
                         GestureDetector(
-                          child: Text("2.Take attandance",
+                          child: Text("2.Add attandance",
                               style: TextStyle(fontSize: 30)),
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(
                                 builder: (BuildContext context) {
                               return takeAttendanceSrceen();
+                            }));
+                          },
+                        ),
+                        GestureDetector(
+                          child: Text("3.Attendance Check",
+                              style: TextStyle(fontSize: 30)),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                              return CheckAttdScreen();
                             }));
                           },
                         )

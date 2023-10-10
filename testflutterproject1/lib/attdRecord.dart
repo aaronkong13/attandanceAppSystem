@@ -1,8 +1,9 @@
-//import 'package:date_format/date_format.dart';
+import 'package:date_format/date_format.dart';
 import 'package:intl/intl.dart';
+import 'package:testflutterproject1/emp.dart';
 //import 'package:timezone/browser.dart';
 
-class AttendanceRecord {
+class AttendanceRecord extends Employee{
   static int attdCount = 0;
 
   void main() {}
@@ -42,4 +43,8 @@ class AttendanceRecord {
     String formattedDate = formatter.format(now);
     return formattedDate;
   }
+
+  AttendanceRecord(){
+  }
+
 }

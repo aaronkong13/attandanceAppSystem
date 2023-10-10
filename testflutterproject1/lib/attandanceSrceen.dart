@@ -38,12 +38,13 @@ class _takeAttandanceSrceenState extends State<takeAttendanceSrceen> {
                   int previousCount = takeCount - 1;
 
                   print("Successful to take the attendance: $takeCount times");
-
                   if (takeCount > previousCount) {
                     setState(() {
                       output = "               Successful!                  \n";
                       time = attdRec.getTime();
                       date = attdRec.getDate();
+                      print(date);
+                      print(time);
                     });
                   }
                 },

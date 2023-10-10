@@ -1,5 +1,6 @@
 class Name {
-  String name = "Aaron";
+  //test for class function
+  String name = "name";
 
   Name() {}
 

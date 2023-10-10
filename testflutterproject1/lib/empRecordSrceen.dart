@@ -31,7 +31,7 @@ class _empRecordScreenState extends State<empRecordScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Welcome!",
+                    "Welcome!${displayName}",
                     style: TextStyle(fontSize: 40),
                   )
                 ],
